@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="CarSharingTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2022-02-11T03:31:58" hostname="LAPTOP-R326EF9E" time="1.26">
+  <properties/>
+  <testcase name="start" classname="CarSharingTest" time="1.26">
+    <failure message="java.lang.AssertionError: Exception in test #10&#10;&#10;java.util.NoSuchElementException: No value present&#13;&#10;&#9;at java.base/java.util.Optional.orElseThrow(Optional.java:377)&#13;&#10;&#9;at carsharing.dbConnector.DataBaseConnector.rentCar(DataBaseConnector.java:306)&#13;&#10;&#9;at carsharing.UserConsole.customerMenu(UserConsole.java:135)&#13;&#10;&#9;at carsharing.UserConsole.allCustomersMenu(UserConsole.java:110)&#13;&#10;&#9;at carsharing.UserConsole.run(UserConsole.java:37)&#13;&#10;&#9;at carsharing.Main.main(Main.java:13)&#10;&#10;Please find below the output of your program during this failed test.&#10;Note that the '&gt;' character indicates the beginning of the input line.&#10;&#10;---&#10;&#10;Arguments: -databaseFileName carsharing&#10;&#10;stdout:&#10;1. Log in as a manager&#10;2. Log in as a customer&#10;3. Create a customer&#10;0. Exit&#10;&#10;&gt; 2&#10;Choose a customer:&#10;1. First customer&#10;2. Second customer&#10;0. Back&#10;&#10;&gt; 2&#10;1. Rent a car&#10;2. Return a rented car&#10;3. My rented car&#10;0. Back&#10;&gt; 1&#10;Choose the company:&#10;1. Car To Go&#10;2. Drive Now&#10;0. Back&#10;&#10;&gt; 1&#10;Car list:&#10;1. Hyundai Venue&#10;2. Maruti Suzuki Dzire&#10;&#10;&gt; 1&#10;You rented 'Hyundai Venue'&#10;1. Rent a car&#10;2. Return a rented car&#10;3. My rented car&#10;0. Back&#10;&gt; 0&#10;1. Log in as a manager&#10;2. Log in as a customer&#10;3. Create a customer&#10;0. Exit&#10;&#10;&gt; 2&#10;Choose a customer:&#10;1. First customer&#10;2. Second customer&#10;0. Back&#10;&#10;&gt; 1&#10;1. Rent a car&#10;2. Return a rented car&#10;3. My rented car&#10;0. Back&#10;&gt; 1&#10;Choose the company:&#10;1. Car To Go&#10;2. Drive Now&#10;0. Back&#10;&#10;&gt; 1&#10;Car list:&#10;1. Maruti Suzuki Dzire&#10;&#10;&gt; 0&#10;&#10;stderr:&#10;org.h2.jdbc.JdbcSQLIntegrityConstraintViolationException: Referential integrity constraint violation: &quot;CONSTRAINT_52C: PUBLIC.CUSTOMER FOREIGN KEY(RENTED_CAR_ID) REFERENCES PUBLIC.CAR(ID) (0)&quot;; SQL statement:&#10;UPDATE CUSTOMER SET rented_car_id = 0 WHERE id = 1 [23506-200]&#10;&#9;at org.h2.message.DbException.getJdbcSQLException(DbException.java:459)&#10;&#9;at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)&#10;&#9;at org.h2.message.DbException.get(DbException.java:205)&#10;&#9;at org.h2.message.DbException.get(DbException.java:181)&#10;&#9;at org.h2.constraint.ConstraintReferential.checkRowOwnTable(ConstraintReferential.java:319)&#10;&#9;at org.h2.constraint.ConstraintReferential.checkRow(ConstraintReferential.java:261)&#10;&#9;at org.h2.table.Table.fireConstraints(Table.java:1057)&#10;&#9;at org.h2.table.Table.fireAfterRow(Table.java:1075)&#10;&#9;at org.h2.command.dml.Update.update(Update.java:230)&#10;&#9;at org.h2.command.CommandContainer.update(CommandContainer.java:198)&#10;&#9;at org.h2.command.Command.executeUpdate(Command.java:251)&#10;&#9;at org.h2.jdbc.JdbcPreparedStatement.execute(JdbcPreparedStatement.java:240)&#10;&#9;at carsharing.dbConnector.DataBaseConnector.execute(DataBaseConnector.java:330)&#10;&#9;at carsharing.dbConnector.DataBaseConnector.rentCar(DataBaseConnector.java:305)&#10;&#9;at carsharing.UserConsole.customerMenu(UserConsole.java:135)&#10;&#9;at carsharing.UserConsole.allCustomersMenu(UserConsole.java:110)&#10;&#9;at carsharing.UserConsole.run(UserConsole.java:37)&#10;&#9;at carsharing.Main.main(Main.java:13)&#10;&#9;at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#10;&#9;at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)&#10;&#9;at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)&#10;&#9;at java.base/java.lang.reflect.Method.invoke(Method.java:568)&#10;&#9;at org.hyperskill.hstest.testing.execution.MainMethodExecutor.invokeMain(MainMethodExecutor.java:172)&#10;&#9;at org.hyperskill.hstest.testing.execution.MainMethodExecutor.lambda$launch$0(MainMethodExecutor.java:199)&#10;&#9;at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)&#10;&#9;at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)&#10;&#9;at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)&#10;&#9;at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)&#10;&#9;at java.base/java.lang.Thread.run(Thread.java:833)" type="java.lang.AssertionError">java.lang.AssertionError: Exception in test #10
+
+java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.orElseThrow(Optional.java:377)
+	at carsharing.dbConnector.DataBaseConnector.rentCar(DataBaseConnector.java:306)
+	at carsharing.UserConsole.customerMenu(UserConsole.java:135)
+	at carsharing.UserConsole.allCustomersMenu(UserConsole.java:110)
+	at carsharing.UserConsole.run(UserConsole.java:37)
+	at carsharing.Main.main(Main.java:13)
+
+Please find below the output of your program during this failed test.
+Note that the '&gt;' character indicates the beginning of the input line.
+
+---
+
+Arguments: -databaseFileName carsharing
+
+stdout:
+1. Log in as a manager
+2. Log in as a customer
+3. Create a customer
+0. Exit
+
+&gt; 2
+Choose a customer:
+1. First customer
+2. Second customer
+0. Back
+
+&gt; 2
+1. Rent a car
+2. Return a rented car
+3. My rented car
+0. Back
+&gt; 1
+Choose the company:
+1. Car To Go
+2. Drive Now
+0. Back
+
+&gt; 1
+Car list:
+1. Hyundai Venue
+2. Maruti Suzuki Dzire
+
+&gt; 1
+You rented 'Hyundai Venue'
+1. Rent a car
+2. Return a rented car
+3. My rented car
+0. Back
+&gt; 0
+1. Log in as a manager
+2. Log in as a customer
+3. Create a customer
+0. Exit
+
+&gt; 2
+Choose a customer:
+1. First customer
+2. Second customer
+0. Back
+
+&gt; 1
+1. Rent a car
+2. Return a rented car
+3. My rented car
+0. Back
+&gt; 1
+Choose the company:
+1. Car To Go
+2. Drive Now
+0. Back
+
+&gt; 1
+Car list:
+1. Maruti Suzuki Dzire
+
+&gt; 0
+
+stderr:
+org.h2.jdbc.JdbcSQLIntegrityConstraintViolationException: Referential integrity constraint violation: &quot;CONSTRAINT_52C: PUBLIC.CUSTOMER FOREIGN KEY(RENTED_CAR_ID) REFERENCES PUBLIC.CAR(ID) (0)&quot;; SQL statement:
+UPDATE CUSTOMER SET rented_car_id = 0 WHERE id = 1 [23506-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:459)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.constraint.ConstraintReferential.checkRowOwnTable(ConstraintReferential.java:319)
+	at org.h2.constraint.ConstraintReferential.checkRow(ConstraintReferential.java:261)
+	at org.h2.table.Table.fireConstraints(Table.java:1057)
+	at org.h2.table.Table.fireAfterRow(Table.java:1075)
+	at org.h2.command.dml.Update.update(Update.java:230)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:198)
+	at org.h2.command.Command.executeUpdate(Command.java:251)
+	at org.h2.jdbc.JdbcPreparedStatement.execute(JdbcPreparedStatement.java:240)
+	at carsharing.dbConnector.DataBaseConnector.execute(DataBaseConnector.java:330)
+	at carsharing.dbConnector.DataBaseConnector.rentCar(DataBaseConnector.java:305)
+	at carsharing.UserConsole.customerMenu(UserConsole.java:135)
+	at carsharing.UserConsole.allCustomersMenu(UserConsole.java:110)
+	at carsharing.UserConsole.run(UserConsole.java:37)
+	at carsharing.Main.main(Main.java:13)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.hyperskill.hstest.testing.execution.MainMethodExecutor.invokeMain(MainMethodExecutor.java:172)
+	at org.hyperskill.hstest.testing.execution.MainMethodExecutor.lambda$launch$0(MainMethodExecutor.java:199)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.hyperskill.hstest.stage.StageTest.start(StageTest.java:155)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at jdk.proxy1/jdk.proxy1.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+</failure>
+  </testcase>
+  <system-out><![CDATA[?[1;31m
+Start test 1?[0m
+1. Log in as a manager
+2. Log in as a customer
+3. Create a customer
+0. Exit
+
+> 0
+?[1;31m
+Start test 2?[0m
+1. Log in as a manager
+2. Log in as a customer
+3. Create a customer
+0. Exit
+
+> 1
+1. Company list
+2. Create a company
+0. Back
+
+> 0
+1. Log in as a manager
+2. Log in as a customer
+3. Create a customer
+0. Exit
+
+?[1;31m
+Start test 3?[0m
+?[1;31m
+Start test 4?[0m
+?[1;31m
+Start test 5?[0m
+?[1;31m
+Start test 6?[0m
+1. Log in as a manager
+2. Log in as a customer
+3. Create a customer
+0. Exit
+
+> 1
+1. Company list
+2. Create a company
+0. Back
+
+> 1
+The company list is empty!
+
+1. Company list
+2. Create a company
+0. Back
+
+> 2
+Enter the company name:
+> Super company
+The company was created!
+
+1. Company list
+2. Create a company
+0. Back
+
+> 1
+Choose the company:
+1. Super company
+0. Back
+
+> 0
+1. Company list
+2. Create a company
+0. Back
+
+> 2
+Enter the company name:
+> Another company
+The company was created!
+
+1. Company list
+2. Create a company
+0. Back
+
+> 2
+Enter the company name:
+> One more company
+The company was created!
+
+1. Company list
+2. Create a company
+0. Back
+
+> 1
+Choose the company:
+1. Super company
+2. Another company
+3. One more company
+0. Back
+
+> 2
+1. Car list
+2. Create a car
+0. Back
+
+?[1;31m
+Start test 7?[0m
+1. Log in as a manager
+2. Log in as a customer
+3. Create a customer
+0. Exit
+
+> 1
+1. Company list
+2. Create a company
+0. Back
+
+> 2
+Enter the company name:
+> Car To Go
+The company was created!
+
+1. Company list
+2. Create a company
+0. Back
+
+> 2
+Enter the company name:
+> Drive Now
+The company was created!
+
+1. Company list
+2. Create a company
+0. Back
+
+> 1
+Choose the company:
+1. Car To Go
+2. Drive Now
+0. Back
+
+> 1
+1. Car list
+2. Create a car
+0. Back
+
+> 1
+The car list is empty!
+
+1. Car list
+2. Create a car
+0. Back
+
+> 2
+Enter the car name:
+> Hyundai Venue
+The car was added!
+
+1. Car list
+2. Create a car
+0. Back
+
+> 2
+Enter the car name:
+> Maruti Suzuki Dzire
+The car was added!
+
+1. Car list
+2. Create a car
+0. Back
+
+> 1
+Car list:
+1. Hyundai Venue
+2. Maruti Suzuki Dzire
+
+1. Car list
+2. Create a car
+0. Back
+
+> 0
+1. Company list
+2. Create a company
+0. Back
+
+> 1
+Choose the company:
+1. Car To Go
+2. Drive Now
+0. Back
+
+> 2
+1. Car list
+2. Create a car
+0. Back
+
+> 1
+The car list is empty!
+
+1. Car list
+2. Create a car
+0. Back
+
+> 2
+Enter the car name:
+> Lamborghini Urraco
+The car was added!
+
+1. Car list
+2. Create a car
+0. Back
+
+> 1
+Car list:
+1. Lamborghini Urraco
+
+1. Car list
+2. Create a car
+0. Back
+
+> 0
+1. Company list
+2. Create a company
+0. Back
+
+> 0
+1. Log in as a manager
+2. Log in as a customer
+3. Create a customer
+0. Exit
+
+> 0
+?[1;31m
+Start test 8?[0m
+1. Log in as a manager
+2. Log in as a customer
+3. Create a customer
+0. Exit
+
+> 2
+The customer list is empty!
+
+1. Log in as a manager
+2. Log in as a customer
+3. Create a customer
+0. Exit
+
+> 3
+Enter the customer name:
+> First customer
+The customer was added!
+
+1. Log in as a manager
+2. Log in as a customer
+3. Create a customer
+0. Exit
+
+> 3
+Enter the customer name:
+> Second customer
+The customer was added!
+
+1. Log in as a manager
+2. Log in as a customer
+3. Create a customer
+0. Exit
+
+> 2
+Choose a customer:
+1. First customer
+2. Second customer
+0. Back
+
+> 1
+1. Rent a car
+2. Return a rented car
+3. My rented car
+0. Back
+> 3
+You didn't rent a car!
+
+1. Rent a car
+2. Return a rented car
+3. My rented car
+0. Back
+> 2
+You didn't rent a car!
+
+1. Rent a car
+2. Return a rented car
+3. My rented car
+0. Back
+?[1;31m
+Start test 9?[0m
+1. Log in as a manager
+2. Log in as a customer
+3. Create a customer
+0. Exit
+
+> 2
+Choose a customer:
+1. First customer
+2. Second customer
+0. Back
+
+> 1
+1. Rent a car
+2. Return a rented car
+3. My rented car
+0. Back
+> 1
+Choose the company:
+1. Car To Go
+2. Drive Now
+0. Back
+
+> 1
+Car list:
+1. Hyundai Venue
+2. Maruti Suzuki Dzire
+
+> 1
+You rented 'Hyundai Venue'
+1. Rent a car
+2. Return a rented car
+3. My rented car
+0. Back
+> 3
+Your rented car:
+Hyundai Venue
+Company:
+Car To Go
+
+1. Rent a car
+2. Return a rented car
+3. My rented car
+0. Back
+> 1
+You've already rented a car!
+1. Rent a car
+2. Return a rented car
+3. My rented car
+0. Back
+> 2
+You've returned a rented car!
+1. Rent a car
+2. Return a rented car
+3. My rented car
+0. Back
+> 0
+1. Log in as a manager
+2. Log in as a customer
+3. Create a customer
+0. Exit
+
+> 0
+?[1;31m
+Start test 10?[0m
+1. Log in as a manager
+2. Log in as a customer
+3. Create a customer
+0. Exit
+
+> 2
+Choose a customer:
+1. First customer
+2. Second customer
+0. Back
+
+> 2
+1. Rent a car
+2. Return a rented car
+3. My rented car
+0. Back
+> 1
+Choose the company:
+1. Car To Go
+2. Drive Now
+0. Back
+
+> 1
+Car list:
+1. Hyundai Venue
+2. Maruti Suzuki Dzire
+
+> 1
+You rented 'Hyundai Venue'
+1. Rent a car
+2. Return a rented car
+3. My rented car
+0. Back
+> 0
+1. Log in as a manager
+2. Log in as a customer
+3. Create a customer
+0. Exit
+
+> 2
+Choose a customer:
+1. First customer
+2. Second customer
+0. Back
+
+> 1
+1. Rent a car
+2. Return a rented car
+3. My rented car
+0. Back
+> 1
+Choose the company:
+1. Car To Go
+2. Drive Now
+0. Back
+
+> 1
+Car list:
+1. Maruti Suzuki Dzire
+
+> 0
+]]></system-out>
+  <system-err><![CDATA[org.h2.jdbc.JdbcSQLIntegrityConstraintViolationException: Referential integrity constraint violation: "CONSTRAINT_52C: PUBLIC.CUSTOMER FOREIGN KEY(RENTED_CAR_ID) REFERENCES PUBLIC.CAR(ID) (0)"; SQL statement:
+UPDATE CUSTOMER SET rented_car_id = 0 WHERE id = 1 [23506-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:459)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.constraint.ConstraintReferential.checkRowOwnTable(ConstraintReferential.java:319)
+	at org.h2.constraint.ConstraintReferential.checkRow(ConstraintReferential.java:261)
+	at org.h2.table.Table.fireConstraints(Table.java:1057)
+	at org.h2.table.Table.fireAfterRow(Table.java:1075)
+	at org.h2.command.dml.Update.update(Update.java:230)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:198)
+	at org.h2.command.Command.executeUpdate(Command.java:251)
+	at org.h2.jdbc.JdbcPreparedStatement.execute(JdbcPreparedStatement.java:240)
+	at carsharing.dbConnector.DataBaseConnector.execute(DataBaseConnector.java:330)
+	at carsharing.dbConnector.DataBaseConnector.rentCar(DataBaseConnector.java:305)
+	at carsharing.UserConsole.customerMenu(UserConsole.java:135)
+	at carsharing.UserConsole.allCustomersMenu(UserConsole.java:110)
+	at carsharing.UserConsole.run(UserConsole.java:37)
+	at carsharing.Main.main(Main.java:13)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.hyperskill.hstest.testing.execution.MainMethodExecutor.invokeMain(MainMethodExecutor.java:172)
+	at org.hyperskill.hstest.testing.execution.MainMethodExecutor.lambda$launch$0(MainMethodExecutor.java:199)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+]]></system-err>
+</testsuite>
